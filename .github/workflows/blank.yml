@@ -1,6 +1,9 @@
 name: Selenium Test
 
-on: [push]
+on:
+  push:
+    branches:
+      - main  # Atur sesuai dengan nama branch yang Anda gunakan
 
 jobs:
   test:
@@ -15,10 +18,14 @@ jobs:
       with:
         python-version: '3.x'
 
+    - name: Install Chrome and ChromeDriver
+      run: |
+        sudo apt update
+        sudo apt install -y chromium-browser chromium-chromedriver
+
     - name: Install dependencies
       run: |
         pip install selenium
-        # Install any other dependencies your test script needs
 
     - name: Run Selenium test
-      run: python path/to/your/selenium_test_script.py
+      run: python coba.py
