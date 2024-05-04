@@ -99,4 +99,3 @@ for idx, line in enumerate(data, start=1):  # Menambahkan fungsi enumerate untuk
         
     except:
         print(f"Akun ke-{idx}: TERJADI ERROR")
-        web.close()
